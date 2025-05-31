@@ -36,7 +36,7 @@ header {
 } */
 
 .logo {
-  color: #f44336;
+  color: #fa6335;
   font-weight: 700;
   font-size: 1.8rem;
 }
@@ -65,4 +65,35 @@ nav a.active {
 
 .btn-header:hover {
   background-color: #e69500;
+}
+
+.contact-section {
+  margin-top: 100px; /* space for fixed header */
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+form input::placeholder,
+form textarea::placeholder {
+  color: #aaa;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #ffa500;
+  box-shadow: 0 0 0 0.2rem rgba(255, 165, 0, 0.25);
+}
+
+.dev {
+  text-decoration: none;
+  color: rgb(0, 255, 213);
+}
+
+.devout {
+  color: white;
+  text-decoration: none;
 }

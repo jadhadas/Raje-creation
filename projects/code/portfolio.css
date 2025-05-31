@@ -36,7 +36,8 @@ header {
 } */
 
 .logo {
-  color: #f44336;
+  color: #fa6335;
+
   font-weight: 700;
   font-size: 1.8rem;
 }
@@ -69,3 +70,16 @@ nav a.active {
 
 /* body css */
 
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  height: 100%;
+}
+.glass-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}

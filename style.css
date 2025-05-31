@@ -22,7 +22,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 3rem;
-  background-color: #121212;
+  background-color: #121212ec;
   position: fixed;
   width: 100%;
   top: 0;
@@ -417,4 +417,42 @@ h2 {
   .about-right {
     width: 100%;
   }
+}
+
+
+.dev {
+  text-decoration: none;
+  color: rgb(0, 255, 213);
+}
+
+.devout {
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+}
+
+.quick-links {
+  text-align: center;
+  margin: 20px;
+  color: #00ffff;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.footdes {
+  text-align: center;
+  margin: 20px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+h4 {
+  text-align: center;
+  margin: 20px;
+  color: #00ffff;
+  text-decoration: none;
+  font-size: 20px;
 }
