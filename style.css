@@ -36,7 +36,7 @@ header {
 }
 
 .logo {
-  color: #f44336;
+  color: #fa6335;
   font-weight: 700;
   font-size: 1.8rem;
 }
@@ -201,9 +201,9 @@ h2 {
 }
 
 .hero-image img {
-  max-width: 300px;
+  max-width: 400px;
   width: 100%;
-  border-radius: 50%;
+  border-radius: 30%;
   border: 3px solid #333;
   box-shadow: 0 0 20px rgba(255, 165, 0, 0.3);
 }
