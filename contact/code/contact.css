@@ -97,3 +97,19 @@ form textarea:focus {
   color: white;
   text-decoration: none;
 }
+
+.social-contact {
+  margin-top: 2rem;
+text-align: center;
+}
+
+.social-contact a {
+  color: #ccc;
+  margin-right: 1.2rem;
+  font-size: 1.4rem;
+  transition: 0.3s;
+}
+
+.social-contact a:hover {
+  color: #ffa500;
+}

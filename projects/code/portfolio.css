@@ -1,85 +1,105 @@
-/* Reset & Base */
-* {
+body {
+  background: #121212;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to right, #0f0f0f, #1a1a1a);
-  color: #fff;
-  overflow-x: hidden;
-}
-
-/* Header */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 3rem;
-  background-color: #121212;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 999;
-  animation: slideDown 1s ease-in-out;
-}
-
-/* @keyframes slideDown {
-  from { transform: translateY(-100%); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-} */
 
 .logo {
-  color: #fa6335;
-
   font-weight: 700;
-  font-size: 1.8rem;
-}
-
-nav a {
-  margin: 0 1rem;
-  text-decoration: none;
-  color: #ccc;
-  transition: 0.3s;
-}
-
-nav a:hover,
-nav a.active {
-  color: #ffa500;
+  letter-spacing: 1.5px;
 }
 
 .btn-header {
-  padding: 0.6rem 1.2rem;
-  background-color: #ffa500;
-  color: black;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: background 0.3s;
+  background: #ffc107;
+  color: #000;
+  border-radius: 25px;
+  font-weight: 600;
+  padding: 8px 20px;
+  transition: background-color 0.3s ease;
 }
 
 .btn-header:hover {
-  background-color: #e69500;
+  background: #e0a800;
+  color: #000;
 }
 
-/* body css */
+/* Filter Buttons */
+.filter-btn {
+  border-radius: 25px;
+  font-weight: 600;
+  min-width: 100px;
+  transition: all 0.3s ease;
+}
 
+.filter-btn.active,
+.filter-btn.btn-warning {
+  background-color: #ffc107;
+  border-color: #ffc107;
+  color: #000;
+}
+
+.filter-btn.btn-outline-warning {
+  color: #ffc107;
+  border-color: #ffc107;
+}
+
+.filter-btn.btn-outline-warning:hover {
+  background-color: #ffc107;
+  color: #000;
+  border-color: #ffc107;
+}
+
+/* Glass card styling */
 .glass-card {
   background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(6px);
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(255, 193, 7, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  height: 100%;
+  cursor: pointer;
 }
+
 .glass-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 25px rgba(255, 193, 7, 0.4);
+}
+
+.project-card img {
+  border-radius: 15px;
+  object-fit: cover;
+  max-height: 180px;
+  width: 100%;
+}
+
+/* Fade-in animation */
+.fade-in {
+  animation: fadeIn 0.4s ease-in-out forwards;
+  opacity: 1 !important;
+  display: block !important;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 575px) {
+  .glass-card {
+    padding: 15px;
+  }
+
+  .btn-header,
+  .filter-btn {
+    font-size: 14px;
+    padding: 6px 15px;
+  }
 }
