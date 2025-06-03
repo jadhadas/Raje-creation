@@ -3,21 +3,29 @@ import { supabase } from '../supabase';
 
 export function Auth() {
   const [loading, setLoading] = useState(false);
-  const [email, setEmail] = useState('');
+  const [userId, setUserId] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError('');
+
+    if (userId !== 'PJ') {
+      setError('Invalid user ID');
+      return;
+    }
+
     try {
       setLoading(true);
       const { error } = await supabase.auth.signInWithPassword({
-        email,
-        password,
+        email: 'admin@rajecreation.com', // This email should be registered in Supabase
+        password: 'pratikjathar@2025',
       });
 
       if (error) throw error;
     } catch (error) {
-      alert(error.message);
+      setError('Invalid credentials');
     } finally {
       setLoading(false);
     }
@@ -32,15 +40,18 @@ export function Auth() {
           </h2>
         </div>
         <form className="mt-8 space-y-6" onSubmit={handleLogin}>
+          {error && (
+            <div className="text-red-500 text-center text-sm">{error}</div>
+          )}
           <div className="rounded-md shadow-sm -space-y-px">
             <div>
               <input
-                type="email"
+                type="text"
                 required
                 className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                placeholder="Email address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                placeholder="User ID"
+                value={userId}
+                onChange={(e) => setUserId(e.target.value)}
               />
             </div>
             <div>
