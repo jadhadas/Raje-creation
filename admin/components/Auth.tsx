@@ -11,21 +11,28 @@ export function Auth() {
     e.preventDefault();
     setError('');
 
+    // Check for correct user ID
     if (userId !== 'PJ') {
       setError('Invalid user ID');
+      return;
+    }
+
+    // Check for correct password
+    if (password !== 'pratikjathar@2025') {
+      setError('Invalid password');
       return;
     }
 
     try {
       setLoading(true);
       const { error } = await supabase.auth.signInWithPassword({
-        email: 'admin@rajecreation.com', // This email should be registered in Supabase
+        email: 'admin@rajecreation.com',
         password: 'pratikjathar@2025',
       });
 
       if (error) throw error;
     } catch (error) {
-      setError('Invalid credentials');
+      setError('Authentication failed');
     } finally {
       setLoading(false);
     }
