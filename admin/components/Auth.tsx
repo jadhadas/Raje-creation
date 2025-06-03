@@ -27,12 +27,12 @@ export function Auth() {
       setLoading(true);
       const { error } = await supabase.auth.signInWithPassword({
         email: 'admin@rajecreation.com',
-        password: 'pratikjathar@2025',
+        password: 'pratikjathar@2025'
       });
 
       if (error) throw error;
-    } catch (error) {
-      setError('Authentication failed');
+    } catch (error: any) {
+      setError(error.message);
     } finally {
       setLoading(false);
     }
@@ -48,7 +48,7 @@ export function Auth() {
         </div>
         <form className="mt-8 space-y-6" onSubmit={handleLogin}>
           {error && (
-            <div className="text-red-500 text-center text-sm">{error}</div>
+            <div className="text-red-500 text-center text-sm mb-4">{error}</div>
           )}
           <div className="rounded-md shadow-sm -space-y-px">
             <div>
